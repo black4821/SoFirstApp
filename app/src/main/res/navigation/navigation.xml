@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/aboutFragment">
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.newfirstapphomeee.AboutFragment"
+        android:label="Aboutme" >
+        <action
+            android:id="@+id/action_aboutFragment_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.newfirstapphomeee.contact.ContactFragment"
+        android:label="Contact" >
+        <action
+            android:id="@+id/action_contactFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+</navigation>
