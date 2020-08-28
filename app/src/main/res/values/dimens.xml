@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Head_Text">32sp</dimen>
+    <dimen name="H1">24sp</dimen>
+    <dimen name="NormalText">21sp</dimen>
+    <dimen name="dataaText">18sp</dimen>
+</resources>
