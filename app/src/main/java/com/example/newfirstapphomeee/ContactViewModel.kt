@@ -49,3 +49,4 @@ class ContactViewModel (private val database: ContactDataDAO,
         super.onCleared()
         viewModelJob.cancel()
     }
+}
