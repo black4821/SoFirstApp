@@ -66,7 +66,7 @@
                     android:fontFamily="@font/margarine"
                     android:onClick="@{()->contactViewModel.onContactAdd()}"
                     android:shadowColor="@color/colorAccent"
-                    android:text="Add List"
+                    android:text="@string/add_list"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 

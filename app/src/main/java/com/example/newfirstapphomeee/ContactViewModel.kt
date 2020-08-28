@@ -8,9 +8,7 @@ import androidx.core.text.HtmlCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.Transformations
 import com.example.sofirstapp.databinding.FragmentContactBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.*
 
 class ContactViewModel (private val database: ContactDataDAO,
                         private val binding: FragmentContactBinding,
@@ -49,4 +47,20 @@ class ContactViewModel (private val database: ContactDataDAO,
         super.onCleared()
         viewModelJob.cancel()
     }
+
+    fun onContactAdd() {
+        uiScope.launch {
+            val newContact = ContactData()
+            newContact.name = binding.editTextTextPersonName.text.toString()
+            newContact.phone = binding.editTextTextPersonPhone.text.toString()
+            insert(newContact)
+        }
+    }
+
+    private suspend fun insert(contact: ContactData) {
+        withContext(Dispatchers.IO) {
+            database.insert(contact)
+        }
+    }
+
 }
